@@ -1,0 +1,45 @@
+<h1>Create New Career</h1>
+
+<%= form_with(model: @career, url: project_careers_path(@project), method: :post, local: true, html: { multipart: true }) do |form| %>
+  <!-- Name Field -->
+  <div class="form-group">
+    <%= form.label :name, "Name" %>
+    <%= form.text_field :name, class: "form-control", required: true %>
+  </div>
+
+  <!-- Location Field -->
+  <div class="form-group">
+    <%= form.label :location, "Location" %>
+    <%= form.text_field :location, class: "form-control", required: true %>
+  </div>
+
+  <!-- Experience Field -->
+  <div class="form-group">
+    <%= form.label :experience, "Experience" %>
+    <%= form.text_field :experience, class: "form-control", required: true %>
+  </div>
+
+  <!-- Qualification Field -->
+  <div class="form-group">
+    <%= form.label :qualification, "Qualification" %>
+    <%= form.text_field :qualification, class: "form-control", required: true %>
+  </div>
+
+  <!-- Position Field -->
+  <div class="form-group">
+    <%= form.label :position, "Position" %>
+    <%= form.text_field :position, class: "form-control", required: true %>
+  </div>
+
+  
+  <!-- Resume Upload Field -->
+  <div class="form-group">
+    <%= form.label :resume, "Upload Resume" %>
+    <%= form.file_field :resume, class: "form-control" %>
+  </div>
+
+  <!-- Submit Button -->
+  <div class="form-group">
+    <%= form.submit "Create Career", class: "btn btn-primary" %>
+  </div>
+<% end %>

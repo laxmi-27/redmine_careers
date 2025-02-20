@@ -1,0 +1,19 @@
+<h1><%= @career.name %></h1>
+
+<p><strong>Location:</strong> <%= @career.location %></p>
+<p><strong>Experience:</strong> <%= @career.experience %></p>
+<p><strong>Qualification:</strong> <%= @career.qualification %></p>
+<p><strong>Position:</strong> <%= @career.position %></p>
+
+<!-- Display the uploaded resume file -->
+<% if @career.resume.attached? %>
+  <p>
+    <strong>Uploaded Resume:</strong>
+    <%= link_to @career.resume.filename.to_s, url_for(@career.resume), target: "_blank", class: "btn btn-success" %>
+  </p>
+<% else %>
+  <p>No resume uploaded.</p>
+<% end %>
+
+<!-- Optionally, add a link to go back to the career list -->
+<%= link_to 'Back to Careers', project_careers_path(@career.project), class: 'btn btn-secondary' %>
